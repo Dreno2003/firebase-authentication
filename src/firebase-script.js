@@ -1,5 +1,5 @@
 // import firebase app (CDN)
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js';
 
 // authentication imports
 import { 
@@ -9,7 +9,7 @@ import {
     signInWithEmailAndPassword,
     updateProfile,
     signOut,
-} from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js';
 
 // firestore imports
 import { 
