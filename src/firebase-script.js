@@ -33,10 +33,29 @@ import {
 
 // web app's Firebase configuration
 /* ADD YOUR FIREBASE CREDENTIALS(config) HERE */
-const firebaseCred = {};
-const firebaseConfig = {
-    ...firebaseCred
-};
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA27Qrx54HX0AnbGohbKpI0Ktw89sHjQYs",
+    authDomain: "auth-9962a.firebaseapp.com",
+    projectId: "auth-9962a",
+    storageBucket: "auth-9962a.appspot.com",
+    messagingSenderId: "80451451638",
+    appId: "1:80451451638:web:5f1c0a917e7840b4928ad7",
+    measurementId: "G-FJN9X5637Z"
+  };
+
+  // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+//   const analytics = getAnalytics(app);
+
   
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -50,6 +69,15 @@ let userDocRef = null;
 let userDoc = null;
 let userEmail = "";
 export let todos = [];
+
+
+// facebook login
+// import { FacebookAuthProvider } from "firebase/auth";
+
+// const provider = new FacebookAuthProvider();
+
+
+// ====//
 
 // ##REDIRECT## if the todos page is accessed, redirect to index if the user is not logged in
 if(window.location.href.includes('todos.html')) {
