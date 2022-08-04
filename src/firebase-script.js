@@ -1,5 +1,5 @@
 // import firebase app (CDN)
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js';
 
 // authentication imports
 import { 
@@ -9,7 +9,7 @@ import {
     signInWithEmailAndPassword,
     updateProfile,
     signOut,
-} from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js';
 
 // firestore imports
 import { 
@@ -22,7 +22,7 @@ import {
     updateDoc,
     onSnapshot,
     Timestamp
-} from 'https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore.js';
+} from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js';
 
 // import to update ui
 import {
@@ -33,16 +33,8 @@ import {
 
 // web app's Firebase configuration
 /* ADD YOUR FIREBASE CREDENTIALS(config) HERE */
-
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
-//   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
+// const firebaseCred = {};
+const firebaseConfig = {
     apiKey: "AIzaSyA27Qrx54HX0AnbGohbKpI0Ktw89sHjQYs",
     authDomain: "auth-9962a.firebaseapp.com",
     projectId: "auth-9962a",
@@ -51,12 +43,6 @@ import {
     appId: "1:80451451638:web:5f1c0a917e7840b4928ad7",
     measurementId: "G-FJN9X5637Z"
   };
-
-  // Initialize Firebase
-//   const app = initializeApp(firebaseConfig);
-//   const analytics = getAnalytics(app);
-
-  
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -64,20 +50,16 @@ const auth = getAuth(app);
 // Initialize Cloud Firestore
 const db = getFirestore(app);
 
+// document.getElementById('login').addEventListener('click', GoogleLogin);
+// document.getElementById('logout').addEventListener('click', LogoutUser);
+
+
+
 const usersCollRef = collection(db, 'users');
 let userDocRef = null;
 let userDoc = null;
 let userEmail = "";
 export let todos = [];
-
-
-// facebook login
-// import { FacebookAuthProvider } from "firebase/auth";
-
-// const provider = new FacebookAuthProvider();
-
-
-// ====//
 
 // ##REDIRECT## if the todos page is accessed, redirect to index if the user is not logged in
 if(window.location.href.includes('todos.html')) {

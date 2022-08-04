@@ -7,17 +7,17 @@ import {
 } from './firebase-script.js';
 
 // if the user is logged in, redirect to todos page
-window.onload = () => {
-    let userDetails = localStorage.getItem('userDetails');
-    if(userDetails) {
-        window.location.href = "/todos.html";
-    } else {
-        console.log("User is not logged in");
-    }
-    // if the home page is accessed, remove the loader onload
-    const loader = document.getElementById('loader');
-    loader.remove();
-};
+// window.onload = () => {
+//     let userDetails = localStorage.getItem('userDetails');
+//     if(userDetails) {
+//         window.location.href = "/todos.html";
+//     } else {
+//         console.log("User is not logged in");
+//     }
+//     // if the home page is accessed, remove the loader onload
+//     const loader = document.getElementById('loader');
+//     loader.remove();
+// };
 
 
 // initialise keen slider for testimonials section
